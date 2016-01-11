@@ -4,7 +4,22 @@ There is no official OpenStack released, so you have to build it and import into
 [Packer](http://packer.io) is used with the qemu builder to create the image which can be imported to glance.
 But instead of describint how to install packer and quemu, the image build itself happens inside a Docker container.
 
+## Quick Start
+
+We have prebuilt the image and uploaded to [Atlas](https://atlas.hashicorp.com/sequenceiq/artifacts/rancheros). 
+To download and import rancheros image into glance:
+```
+curl -sL https://atlas.hashicorp.com/api/v1/artifacts/sequenceiq/rancheros/openstack.image/1/file | tar -xz
+  glance image-create --name RancherOS \
+  --container-format bare \
+  --disk-format qcow2 \
+  --file rancheros \
+  --is-public True
+```
+
 ## Build
+
+If you dont want to use the prebuild image, or want to hack on it, follow the steps below:
 
 ```
 make packer
