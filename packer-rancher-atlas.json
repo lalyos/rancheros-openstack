@@ -1,5 +1,6 @@
 {
  "variables": {
+    "atlas_user" : "sequenceiq",
     "rancher_version": "v0.4.2"
   },
 
@@ -50,7 +51,7 @@
   },
   {
     "type": "atlas",
-    "artifact": "sequenceiq/rancheros",
+    "artifact": "{{ user `atlas_user` }}/rancheros",
     "artifact_type": "openstack.image",
     "metadata": {
         "created_at": "{{timestamp}}",
