@@ -10,7 +10,7 @@ We have prebuilt the image and uploaded to [Atlas](https://atlas.hashicorp.com/s
 To download and import rancheros image into glance:
 ```
 curl -sL https://atlas.hashicorp.com/api/v1/artifacts/sequenceiq/rancheros/openstack.image/1/file | tar -xz
-  glance image-create --name RancherOS \
+glance image-create --name RancherOS \
   --container-format bare \
   --disk-format qcow2 \
   --file rancheros \
