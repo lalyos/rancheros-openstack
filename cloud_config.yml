@@ -2,8 +2,3 @@
 rancher:
   services_include:
     debian-console: true
-
-write_files:
-    - content: |
-	hello from openstack  packer 
-      path: /var/log/hello-packer.log
