@@ -12,3 +12,6 @@ clean:
 
 docker-image:
 	docker build -t packer-qemu .
+
+md5-iso:
+	sed -i '/"iso_checksum"/ s/[0-9a-f]\{32\}/$(shell curl -Ls https://releases.rancher.com/os/latest/rancheros.iso | md5sum |sed 's/ .*//')/' packer-rancher.json
